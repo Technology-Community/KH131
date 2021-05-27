@@ -1,5 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 #main {
     .profile {
-        color: red;
+        width: 100%;
+        .name {
+            & > div {
+                display: flex;
+                justify-content: center;
+            }
+            img {
+                width: 20vw;
+            }
+            h2 {
+                color: red;
+            }
+        }
+        .information {
+            margin-top: 5vh;
+            ul {
+                display: flex;
+                justify-content: space-around;
+                li {
+                    color: rgb(110, 109, 187);
+                }
+            }
+        }
+    }
+    .covid {
+        margin-top: 10vh;
+        width: 100%;
+        .title {
+            text-align: center;
+        }
     }
 }

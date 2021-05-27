@@ -24,9 +24,13 @@ $time = subDayswithdate($value, 10);
     <header></header>
     <main id="main">
         <div class="profile">
-            <div>
-                <img src="" alt="profile-img" />
-                <h2>Nguyen Phan Nam</h2>
+            <div class="name">
+                <div>
+                    <img src="./dist/images/avatar.jpg" alt="profile-img" />
+                </div>
+                <div>
+                    <h2>Nguyen Phan Nam</h2>
+                </div>
             </div>
             <div class="information">
                 <ul>
@@ -36,21 +40,29 @@ $time = subDayswithdate($value, 10);
                 </ul>
             </div>
         </div>
-        <div class="">
-            <form method="GET" action="#">
-                <div>
-                    <select name="select" id="select">
-                        <option>Day</option>
-                        <option>Month</option>
-                    </select>
-                </div>
-            </form>
+
+        <div class="covid">
+            <h1 class="title">COVID Report</h1>
+            <div class="form">
+                <form method="GET" action="#">
+                    <div>
+                        <select name="select" id="select">
+                            <option>Lastest 10 Day</option>
+                            <option>Lastest 10 Month</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="table">
+                <table>
+
+                </table>
+            </div>
         </div>
     </main>
     <footer>
 
     </footer>
-    <h1>COVID Report</h1>
     <div>
         <!-- <?php
                 $row = 1;

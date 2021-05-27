@@ -11,7 +11,11 @@ const devMode = true;
 
 module.exports = {
     mode: devMode ? "development" : "production",
-    entry: ["./resources/js/app.js", "./resources/scss/app.scss"],
+    entry: [
+        "./resources/js/app.js",
+        "./resources/scss/app.scss",
+        "./resources/images/avatar.jpg",
+    ],
 
     output: {
         filename: "js/app.min.js",
@@ -60,8 +64,9 @@ module.exports = {
                         loader: "file-loader",
                         options: {
                             name: "[name].[ext]",
+                            outputPath: "images",
                             publicPath: "../images",
-                            emitFile: false,
+                            emitFile: true,
                         },
                     },
                 ],
