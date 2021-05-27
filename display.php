@@ -45,7 +45,7 @@ $time = subDayswithdate($value, 10);
             <h1 class="title">COVID Report</h1>
             <div class="form">
                 <form method="GET" action="#">
-                    <div>
+                    <div class="form__select">
                         <select name="select" id="select">
                             <option>Lastest 10 Day</option>
                             <option>Lastest 10 Month</option>
@@ -55,41 +55,37 @@ $time = subDayswithdate($value, 10);
             </div>
             <div class="table">
                 <table>
+                    <?php
+                    $row = 1;
+                    if (($handle = fopen(PATH_CSV . NAME_CSV, "r")) !== FALSE) {
+                        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                            if ($row == 1) {
+                                $row++;
+                                continue;
+                            }
 
+                            $num = count($data);
+
+                            $row++;
+
+                            if ($data[0] >= $time) {
+                                print_r($data);
+                                // for ($i = 0; $i < $num; $i++) {
+                                // echo $data[$i];
+                                // }
+                            }
+                        }
+                        fclose($handle);
+                    } else {
+                        echo "False";
+                    }
+                    ?>
                 </table>
             </div>
         </div>
     </main>
     <footer>
-
     </footer>
-    <div>
-        <!-- <?php
-                $row = 1;
-                if (($handle = fopen(PATH_CSV . NAME_CSV, "r")) !== FALSE) {
-                    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                        if ($row == 1) {
-                            $row++;
-                            continue;
-                        }
-
-                        $num = count($data);
-
-                        $row++;
-
-                        if ($data[0] >= $time) {
-                            print_r($data);
-                            // for ($i = 0; $i < $num; $i++) {
-                            // echo $data[$i];
-                            // }
-                        }
-                    }
-                    fclose($handle);
-                } else {
-                    echo "False";
-                }
-                ?> -->
-    </div>
 </body>
 
 </html>

@@ -35,5 +35,11 @@
         .title {
             text-align: center;
         }
+        .form {
+            .form__select {
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
 }
