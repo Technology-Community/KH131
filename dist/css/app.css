@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0; }
 
+.d-flex {
+  display: flex; }
+
+.justify-content-center {
+  justify-content: center; }
+
 #main .profile {
   width: 100%; }
   #main .profile .name > div {
@@ -26,5 +32,9 @@
     text-align: center; }
   #main .covid .form .form__select {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    margin-bottom: 3vh; }
+  #main .covid .form button {
+    padding: 5px;
+    color: #347a8b; }
 

@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
 #main {
     .profile {
         width: 100%;
@@ -39,6 +47,11 @@
             .form__select {
                 display: flex;
                 justify-content: center;
+                margin-bottom: 3vh;
+            }
+            button {
+                padding: 5px;
+                color: rgb(52, 122, 139);
             }
         }
     }

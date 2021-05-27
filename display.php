@@ -13,10 +13,10 @@ $time = subDayswithdate($value, 10);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
     <link rel="stylesheet" href="./dist/css/app.css" />
 </head>
 
@@ -47,45 +47,21 @@ $time = subDayswithdate($value, 10);
                 <form method="GET" action="#">
                     <div class="form__select">
                         <select name="select" id="select">
-                            <option>Lastest 10 Day</option>
-                            <option>Lastest 10 Month</option>
+                            <option id="1" value="1">Lastest 10 Day</option>
+                            <option id="2" value="2">Lastest 10 Month</option>
                         </select>
                     </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="">Submit</button>
+                    </div>
                 </form>
-            </div>
-            <div class="table">
                 <table>
-                    <?php
-                    $row = 1;
-                    if (($handle = fopen(PATH_CSV . NAME_CSV, "r")) !== FALSE) {
-                        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                            if ($row == 1) {
-                                $row++;
-                                continue;
-                            }
 
-                            $num = count($data);
-
-                            $row++;
-
-                            if ($data[0] >= $time) {
-                                print_r($data);
-                                // for ($i = 0; $i < $num; $i++) {
-                                // echo $data[$i];
-                                // }
-                            }
-                        }
-                        fclose($handle);
-                    } else {
-                        echo "False";
-                    }
-                    ?>
                 </table>
             </div>
         </div>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
 </body>
 
 </html>
