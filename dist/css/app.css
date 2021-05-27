@@ -9,21 +9,20 @@
   justify-content: center; }
 
 #main .profile {
-  width: 100%; }
-  #main .profile .name > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; }
+  #main .profile .avatar > div {
     display: flex;
     justify-content: center; }
-  #main .profile .name img {
-    width: 20vw; }
-  #main .profile .name h2 {
-    color: red; }
+    #main .profile .avatar > div img {
+      width: 20vw; }
   #main .profile .information {
     margin-top: 5vh; }
-    #main .profile .information ul {
-      display: flex;
-      justify-content: space-around; }
-      #main .profile .information ul li {
-        color: #6e6dbb; }
+    #main .profile .information h2 {
+      color: red; }
+    #main .profile .information ul li {
+      color: #6e6dbb; }
 
 #main .covid {
   margin-top: 10vh;

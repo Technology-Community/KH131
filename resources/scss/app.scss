@@ -14,23 +14,23 @@
 #main {
     .profile {
         width: 100%;
-        .name {
+        display: flex;
+        justify-content: space-around;
+        .avatar {
             & > div {
                 display: flex;
                 justify-content: center;
-            }
-            img {
-                width: 20vw;
-            }
-            h2 {
-                color: red;
+                img {
+                    width: 20vw;
+                }
             }
         }
         .information {
             margin-top: 5vh;
+            h2 {
+                color: red;
+            }
             ul {
-                display: flex;
-                justify-content: space-around;
                 li {
                     color: rgb(110, 109, 187);
                 }
