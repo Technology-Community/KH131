@@ -1,0 +1,31 @@
+{
+    "name": "KH131",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "copy-webpack-plugin": "^9.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^5.2.6",
+        "cssnano": "^5.0.4",
+        "file-loader": "^6.2.0",
+        "mini-css-extract-plugin": "^1.6.0",
+        "node-sass": "^6.0.0",
+        "npm-watch": "^0.9.0",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "sass-loader": "^11.1.1",
+        "webpack": "^5.37.1",
+        "webpack-cli": "^4.7.0"
+    },
+    "scripts": {
+        "dev": "npm run development",
+        "development": "webpack",
+        "watch": "webpack watch",
+        "watch-poll": "webpack watch -- --watch-options-poll=1000",
+        "hot": "webpack watch --hot",
+        "prod": "npm run production",
+        "production": "webpack --production",
+        "build": "webpack --config webpack.config.js"
+    }
+}

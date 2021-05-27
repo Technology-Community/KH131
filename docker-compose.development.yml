@@ -1,0 +1,64 @@
+version: "3.8"
+
+networks:
+  app_network:
+    driver: bridge
+
+services:
+  # DATABASE
+  # mysql:
+  #   container_name: ${APP_NAME}_mysql
+  #   hostname: mysql
+  #   image: mysql:8.0.23
+  #   working_dir: /etc/mysql/
+  #   networks:
+  #     - app_network
+  #   ports:
+  #     - "3306:3306"
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=123456
+  #     - MYSQL_DATABASE=${DB_DATABASE}
+  #     - MYSQL_USER=${DB_USERNAME}
+  #     - MYSQL_PASSWORD=${DB_PASSWORD}
+
+  # WEBSERVER
+  nginx:
+    container_name: ${APP_NAME}_nginx
+    hostname: nginx
+    image: nginx:1.19.7-alpine
+    working_dir: /var/www
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      # - .:/var/www/
+      - .:/var/www/public
+    networks:
+      - app_network
+
+  # APPLICATION
+  php:
+    container_name: ${APP_NAME}_php
+    hostname: php
+    build:
+      context: .
+      dockerfile: ./docker/php/dockerfile.development
+    volumes:
+      # - ./docker/php/config/php.ini:/usr/local/etc/php/php.ini
+      # - .:/var/www/
+      - .:/var/www/public
+    networks:
+      - app_network
+    # entrypoint: ./docker/php/init.sh
+  # node:
+  #   container_name: ${APP_NAME}_node
+  #   hostname: node
+  #   image: node:14
+  #   working_dir: /usr/share/app
+  #   networks:
+  #     - app_network
+  #   volumes:
+  #     - .:/usr/share/app
+  #   entrypoint: ./docker/node/init.sh
+  #   stdin_open: true
+  #   tty: true
