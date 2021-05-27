@@ -1,5 +1,4 @@
 <?php
-require_once "./config.php";
 require_once "./helper.php";
 
 
@@ -24,15 +23,13 @@ $time = subDayswithdate($value, 10);
     <header></header>
     <main id="main">
         <div class="profile">
-            <div class="name">
+            <div class="avatar">
                 <div>
                     <img src="./dist/images/avatar.jpg" alt="profile-img" />
                 </div>
-                <div>
-                    <h2>Nguyen Phan Nam</h2>
-                </div>
             </div>
             <div class="information">
+                <h2>Nguyen Phan Nam</h2>
                 <ul>
                     <li>27/05/2002</li>
                     <li>Game Developer</li>
@@ -56,8 +53,15 @@ $time = subDayswithdate($value, 10);
                     </div>
                 </form>
                 <table>
-
-                </table>
+                    <?php
+                    $row = 1;
+                    if (($handle = fopen("who_covid_southeast.csv", "r")) !== FALSE) {
+                    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    $num = count($data);
+                    echo "<p> $num fields in line $row: <br /></p>\n";
+                    $row++;
+                    for ($c=0; $c < $num; $c++) { echo $data[$c] . "<br />\n" ; } } fclose($handle); } </table>
+                    ?>
             </div>
         </div>
     </main>
