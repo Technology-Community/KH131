@@ -35,6 +35,16 @@ $time = subDayswithdate($value, 10);
                 </ul>
             </div>
         </div>
+        <div class="">
+            <form method="GET" action="#">
+                <div>
+                    <select name="select" id="select">
+                        <option>Day</option>
+                        <option>Month</option>
+                    </select>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
 
